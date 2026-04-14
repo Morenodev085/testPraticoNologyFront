@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 function App() {
   const [valor, setValor] = useState('');
   const [is_Vip, setIs_Vip] = useState(false);
-  const [resultado, setResultado] = useState(null);
-  const [historico, setHistorico] = useState([]);
+  const [historico, setHistorico] = useState<any[]>([]);
   const [cupom, setCupom] = useState("0");
+  const [resultado, setResultado] = useState<any>(null);
 
   const carregarHistorico = async () => {
     try {
@@ -18,9 +18,9 @@ function App() {
     }
   };
 
-  useEffect(() => { carregarHistorico(); }, []); 
+  useEffect(() => { carregarHistorico(); }, []);
 
-  const handleCalcular = async (e) => {
+  const handleCalcular = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const res = await axios.post('https://testepraticonologypy.onrender.com/api/cashback', {
