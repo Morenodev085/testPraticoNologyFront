@@ -10,7 +10,7 @@ function App() {
 
   const carregarHistorico = async () => {
     try {
-      const res = await axios.get('http://127.0.0.1:5000/api/historico');
+      const res = await axios.get('https://testepraticonologypy.onrender.com/api/historico');
       console.log("Histórico carregado:", res.data[0]); // Log do primeiro item para verificar a estrutura
       setHistorico(res.data);
     } catch (err) {
@@ -23,7 +23,7 @@ function App() {
   const handleCalcular = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://127.0.0.1:5000/api/cashback', {
+      const res = await axios.post('https://testepraticonologypy.onrender.com/api/cashback', {
         valor: parseFloat(valor),
         cupom: parseFloat(cupom),
         vip: is_Vip
