@@ -18,7 +18,7 @@ function App() {
     }
   };
 
-  useEffect(() => { carregarHistorico(); }, []);
+  useEffect(() => { carregarHistorico(); }, []); 
 
   const handleCalcular = async (e) => {
     e.preventDefault();
